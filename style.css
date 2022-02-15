@@ -5,12 +5,16 @@
 }
 
 header {
-    width: 100%;
+    width: 100vw;
     height: 70px;
     background-color: rgba(29, 88, 167, 255);
     color: white;
     font-size: 25px;
     font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
 nav {
@@ -120,7 +124,8 @@ aside li {
 }
 
 main {
-    width: 100%;
+    margin-top: 70px;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
