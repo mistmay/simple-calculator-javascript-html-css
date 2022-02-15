@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: rgba(29, 88, 167, 255);
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+#menu {
+    width: 45px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 10%;
+    background-color: blueviolet;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-line {
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    border-radius: 10%;
+    transition: 0.8s;
+}
+
+#menu:hover {
+    gap: 0;
+    position: relative;
+}
+
+#menu:hover>.menu-line:first-child {
+    transform: rotate(65deg);
+    position: absolute;
+    top: 22px;
+    left: 11px;
+}
+
+#menu:hover>.menu-line:last-child {
+    transform: rotate(-65deg);
+    position: absolute;
+    top: 22px;
+    left: 11px;
+}
+
+aside {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    min-height: calc(100vh - 70px);
+    width: 350px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    background-color: rgba(145, 1, 114, 255);
+    z-index: 2;
+    transform: translate(100%);
+    transition: 0.8s;
+}
+
+.open {
+    transform: translate(0);
+}
+
+aside a {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+aside a:hover {
+    background-color: rgba(29, 88, 167, 255);
+}
+
+aside ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+
+aside li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+    background-color: rgba(157, 201, 219, 255);
+    padding: 10px 0;
+}
+
+#calculator {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "screen screen screen screen"
+        "plus minus multiply divisor"
+        "n-7 n-8 n-9 equal"
+        "n-4 n-5 n-6 equal"
+        "n-1 n-2 n-3 equal"
+        "n-0 point clear equal";
+    width: 35%;
+    height: 600px;
+    border-radius: 10%;
+    overflow: hidden;
+    background-color: white;
+}
+
+#n-0 {
+    grid-area: n-0;
+}
+
+#n-1 {
+    grid-area: n-1;
+}
+
+#n-2 {
+    grid-area: n-2;
+}
+
+#n-3 {
+    grid-area: n-3;
+}
+
+#n-4 {
+    grid-area: n-4;
+}
+
+#n-5 {
+    grid-area: n-5;
+}
+
+#n-6 {
+    grid-area: n-6;
+}
+
+#n-7 {
+    grid-area: n-7;
+}
+
+#n-8 {
+    grid-area: n-8;
+}
+
+#n-9 {
+    grid-area: n-9;
+}
+
+#screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    grid-area: screen;
+    text-align: right;
+    padding: 30px;
+    font-size: 50px;
+    font-weight: bold;
+    background-color: rgba(35, 35, 35, 255);
+    color: white;
+}
+
+#small-result {
+    font-size: 15px;
+    color: lightgray;
+}
+
+#plus {
+    grid-area: plus;
+}
+
+#multiply {
+    grid-area: multiply;
+}
+
+#minus {
+    grid-area: minus;
+}
+
+#divisor {
+    grid-area: divisor;
+}
+
+#equal {
+    grid-area: equal;
+    background-color: rgba(248, 125, 79, 255);
+}
+
+#point {
+    grid-area: point;
+}
+
+#clear {
+    grid-area: clear;
+}
+
+.components {
+    text-align: center;
+    border: 1px solid rgba(191, 191, 191, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.operator {
+    background-color: rgba(230, 231, 231, 255);
+}
+
+.components:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+@media (max-width: 1000px) {
+    #calculator {
+        width: 60%;
+    }
+}
+
+@media (max-width: 500px) {
+    #calculator {
+        width: 90%;
+    }
+
+    aside {
+        width: 100vw;
+    }
+}
